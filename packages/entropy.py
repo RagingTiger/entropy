@@ -1,6 +1,5 @@
 # std libs
 import math
-import random
 
 
 # funcs
@@ -11,22 +10,22 @@ def calc_entropy(p_dist):
 
 
 def gen_p_dist(states):
-    """Create a random probability distribution."""
-    # create lists of random state population
-    state_pops = [random.randint(1, states) for _ in range(states)]
-    
-    # get total sum of randints
-    total_value = sum(state_pops)
-    
-    # finally generate probability distribution
-    for population in state_pops:
-        # generate
-        yield population / total_value
+    """Create a uniform probability distribution."""
+    # create lists of state probabilities
+    for _ in range(states):
+        # gen probability of state
+        yield 1 / states
         
+
+def shortcut_entropy(states):
+    """A simpler way to calculate entropy if probablities of all states are equal."""
+    # get probability of one state
+    p = 1 / states
+    
+    # now get entropy
+    return -(p * math.log(p) * states)
+
 
 def gen_entropy(states):
     """Wrap all entropy calculating funcs."""
-    return calc_entropy(gen_p_dist(states))
-
-
-    
+    return calc_entropy(gen_p_dist(states))  
