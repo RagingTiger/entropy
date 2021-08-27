@@ -1,0 +1,37 @@
+# About
+Collection of `Entropy` explorations using: `Python 3`, `JupyterLab`,
+and `Docker`.
+
+# TL;DR
+**Quickstart On Mac with Docker:**
+```
+# assumes your current working directory is entropy_sim
+docker run -d \
+           --rm \
+           --name jupyter-entropy-sim \
+           -e JUPYTER_ENABLE_LAB=yes \
+           -p 8888:8888 \
+           -v $PWD:/home/jovyan/work \
+           jupyter/scipy-notebook:lab-3.1.7 && \
+sleep 5 && \
+docker logs jupyter-entropy-sim 2>&1 | grep "http://127.0.0.1" | tail -n 1 | awk '{print $2}'
+```
+
+# Usage
+Below we will discuss running the `JupyterLab` server.
+
+## Docker
+`Docker` will be the primary way discussed for running the `JupyterLab` server.
+Please see the [Docker documentation](https://docs.docker.com/get-started/overview/)
+for more info about `Docker`.
+
+### Remove
+To remove the server simply stop it
+```
+$ docker stop jupyter-entropy-sim
+```
+
+### :)
+```
+head -n 15 README.md
+```
