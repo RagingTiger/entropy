@@ -33,5 +33,5 @@ $ docker stop jupyter-entropy-sim
 
 ### :)
 ```
-head -n 15 README.md
+head -n 20 README.md
 ```
