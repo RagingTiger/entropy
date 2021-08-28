@@ -18,12 +18,9 @@ def gen_p_dist(states):
         
 
 def shortcut_entropy(states):
-    """A simpler way to calculate entropy if probablities of all states are equal."""
-    # get probability of one state
-    p = 1 / states
-    
-    # now get entropy
-    return -(p * math.log(p) * states)
+    """A simpler way to calculate entropy if probablities of all states are equal."""    
+    # calculate
+    return -(math.log(1 / states))
 
 
 def gen_entropy(states):
