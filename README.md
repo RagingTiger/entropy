@@ -5,16 +5,16 @@ and `Docker`.
 # TL;DR
 **Quickstart On Mac with Docker:**
 ```
-# assumes your current working directory is entropy_sim
+# assumes your current working directory is entropy
 docker run -d \
            --rm \
-           --name jupyter-entropy-sim \
+           --name jupyter-entropy \
            -e JUPYTER_ENABLE_LAB=yes \
            -p 8888:8888 \
            -v $PWD:/home/jovyan/work \
            jupyter/scipy-notebook:lab-3.1.7 && \
 sleep 5 && \
-docker logs jupyter-entropy-sim 2>&1 | grep "http://127.0.0.1" | tail -n 1 | awk '{print $2}'
+docker logs jupyter-entropy 2>&1 | grep "http://127.0.0.1" | tail -n 1 | awk '{print $2}'
 ```
 
 # Usage
@@ -28,7 +28,7 @@ for more info about `Docker`.
 ### Remove
 To remove the server simply stop it
 ```
-$ docker stop jupyter-entropy-sim
+$ docker stop jupyter-entropy
 ```
 
 ### :)
