@@ -17,7 +17,7 @@ def gen_uniform_pdist(states):
         yield 1 / states
         
 
-def shortcut_entropy(states):
+def uniform_entropy(states):
     """A simpler way to calculate entropy if probablities of all states are equal."""    
     # calculate
     return -(math.log(1 / states))
