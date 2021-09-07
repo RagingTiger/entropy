@@ -65,7 +65,7 @@ def horizontal_bar_graph(xs, ys, plot_labels, size=(8, 6), fig_caption=None):
 
 
 # for time series data
-def line_graph(xs, ys, plot_labels, size=(8, 6)):
+def line_graph(xs, ys, plot_labels, size=(8, 6), tick_labels=False):
     
     # get labels for plot (not points)
     xlabel, ylabel, plot_title = plot_labels.split(':')
@@ -80,6 +80,10 @@ def line_graph(xs, ys, plot_labels, size=(8, 6)):
     matplotlib.pyplot.ylabel('{}'.format(ylabel, fontsize=12))
     matplotlib.pyplot.xlabel('{}'.format(xlabel, fontsize=12))
     matplotlib.pyplot.title('{}'.format(plot_title))
+    
+    # label x-axis with current major
+    if tick_labels:
+        matplotlib.pyplot.xticks([i for i, _ in enumerate(xs)], xs, rotation=90)
     
     # return plot
     return matplotlib.pyplot   
