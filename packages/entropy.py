@@ -55,3 +55,10 @@ def gen_pdist(states, step=1):
         
     # final yield
     yield [event / 100 for event in pdist]
+    
+    
+def gen_se_prob(start=1, stop=100, step=1):
+    """Generate single event probabilities."""
+    # loop
+    for event in range(start, stop, step):
+        yield event/(stop)
