@@ -3,10 +3,15 @@ import math
 
 
 # funcs
+def info_content(p):
+    """Calculate information content (aka surpisal) of a event with probability P."""
+    return -(math.log(p))
+
+
 def calc_entropy(p_dist):
     """Calculate the entropy of a probability distribution (list)."""
     # calculate
-    return -(sum(p * math.log(p) if p != 0 else 0 for p in p_dist))
+    return (sum(p * info_content(p) if p != 0 else 0 for p in p_dist))
 
 
 def gen_uniform_pdist(states):
