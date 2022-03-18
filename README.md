@@ -1,5 +1,5 @@
 # About
-Collection of `Entropy` explorations using: `Python 3`, `JupyterLab`,
+Collection of `entropy` explorations using: `Python 3`, `JupyterLab`,
 and `Docker`.
 
 # TL;DR
